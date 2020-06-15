@@ -14,21 +14,15 @@
 
               @foreach($products as $product)
 
-                <div class="col-md-3">
-                  <div class="card" style="width: 16rem;">
-
-                    <!-- @php $i=1; @endphp -->
+                <div class="cols">
+                  <div class="card" style="width: 13rem;">
 
                     @foreach($product->images as $image)
 
-                      <!-- @if($i > 0) -->
                        <img class="card-img-top" src="{{ asset('Images/Products/'. $image->image)}}" alt="Card image cap">
-                      <!-- @endif -->
 
-                    <!-- @php $i--; $endphp -->
+                    @endforeach
 
-                  <!-- @endforeach -->
-                   <!-- <img class="card-img-top" src="{{ asset('Images/Products/'. 'one.jpg')}}" alt="Card image cap"> -->
                    <div class="card-body">
                      <h5 class="card-title">{{ $product->title }}</h5>
                      <p class="card-text">Price : {{ $product->price }} Tk</p>
