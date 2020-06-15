@@ -12,8 +12,8 @@
 
             <!-- navbar -->
 
-            @include('partials.nav')
-            @yield('content')
+             @include('partials.header')
+             @yield('content')
 
           </div>
         <div class="flex-center position-ref full-height">

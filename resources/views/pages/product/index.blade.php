@@ -1,52 +1,47 @@
-@extends('layout.master')
+@include('partials.header')
+@include('partials.style')
 
-@section('content')
+      <!-- @include('partials.product-sidebar') -->
 
-      <!-- <div class="list-group col-md-2">
-        <a href="#" class="list-group-item list-group-item-warning">
-          List
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">list 1</a>
-        <a href="#" class="list-group-item list-group-item-action">list 2</a>
-        <a href="#" class="list-group-item list-group-item-action">list 3</a>
-        <a href="#" class="list-group-item list-group-item-action">list 4</a>
-        <a href="#" class="list-group-item list-group-item-action">list 5</a>
-        <a href="#" class="list-group-item list-group-item-action">list 6</a>
-        <a href="#" class="list-group-item list-group-item-action">list 7</a>
-        <a href="#" class="list-group-item list-group-item-action">list 8</a>
-        <a href="#" class="list-group-item list-group-item-action">list 9</a>
-        <a href="#" class="list-group-item list-group-item-action">list 10</a>
+      <div class="container-fluid">
+        <div class="row">
 
-      </div> -->
-            <!-- @include('partials.product-sidebar') -->
+          @include('partials.sidebar')
 
-            @foreach($products as $product)
+          <div class="col-md-8">
+            <h3 class="display-4">Products</h3><hr>
+            <div class="row">
 
-                <div class="col-md-8">
-                  <div class="widget">
-                    <h3>All Products</h3>
-                    <div class="row">
-                      <div class="col-md-3">
-                          <div class="card" style="width: 16rem;">
-                            <img class="card-img-top" src="{{ asset('Images/Products/'. 'one.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">
-                                {{$product->title}}
-                              </h5>
-                              <p class="card-text"></p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div>
+              @foreach($products as $product)
 
-                      </div>
+                <div class="col-md-3">
+                  <div class="card" style="width: 16rem;">
 
-                    </div>
+                    <!-- @php $i=1; @endphp -->
 
-                  </div>
+                    @foreach($product->images as $image)
 
+                      <!-- @if($i > 0) -->
+                       <img class="card-img-top" src="{{ asset('Images/Products/'. $image->image)}}" alt="Card image cap">
+                      <!-- @endif -->
+
+                    <!-- @php $i--; $endphp -->
+
+                  <!-- @endforeach -->
+                   <!-- <img class="card-img-top" src="{{ asset('Images/Products/'. 'one.jpg')}}" alt="Card image cap"> -->
+                   <div class="card-body">
+                     <h5 class="card-title">{{ $product->title }}</h5>
+                     <p class="card-text">Price : {{ $product->price }} Tk</p>
+                     <a href="#" class="btn btn-outline-warning">Add to cart</a>
+                   </div>
+                 </div>
                 </div>
 
+              @endforeach
 
-            @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
 
-@endsection
+@include('partials.script')

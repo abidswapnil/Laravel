@@ -1,7 +1,26 @@
-@include('partials.nav')
+@include('partials.header')
 @include('partials.style')
 @include('partials.script')
 
-<h1 class="display-4 text-center">Contacts</h1><hr>
+
+<div class="row">
+  @include('partials.sidebar')
+  <div class="cols">
+    <p class="text-center">
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+      All contacts will be here.
+
+
+    </p>
+  </div>
+
+</div>
 
 @include('partials.footer')

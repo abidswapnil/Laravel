@@ -1,7 +1,13 @@
-@include('partials.nav')
+@include('partials.header')
 @include('partials.style')
 @include('partials.script')
 
-<h1 class="display-4 text-center">About</h1><hr>
+<div class="row">
+  @include('partials.sidebar')
+  <div class="col-sm">
+    <p class="text-center">This is our about</p>
+  </div>
+
+</div>
 
 @include('partials.footer')
